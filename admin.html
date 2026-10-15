@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HADI Hotel & Restaurant - Admin Management Portal</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Admin & Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ADMIN LOGIN GATEWAY SCREEN -->
+    <div class="admin-login-screen" id="adminLoginScreen">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <h2>HADI Hotel Admin</h2>
+            <p>Enter Master PIN or Password to access management portal</p>
+            
+            <form id="adminLoginForm" class="login-form">
+                <div class="adm-form-group">
+                    <label class="adm-label" for="loginPin">Security Access PIN / Password</label>
+                    <input type="password" id="loginPin" class="adm-input" placeholder="Enter PIN (Default: admin123)" required>
+                </div>
+
+                <div style="display: flex; gap: 0.8rem; flex-direction: column;">
+                    <button type="submit" class="btn-primary" style="justify-content: center; width: 100%;">
+                        <i class="fa-solid fa-lock-open"></i> Unlock Portal
+                    </button>
+                    <button type="button" class="btn-outline" id="quickDemoLoginBtn" style="justify-content: center; width: 100%; font-size: 0.82rem;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> 1-Click Quick Demo Login
+                    </button>
+                    <a href="index.html" class="btn-outline" style="justify-content: center; border-color: transparent; color: var(--adm-text-muted); font-size: 0.82rem;">
+                        <i class="fa-solid fa-arrow-left"></i> Return to Customer Website
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN ADMIN DASHBOARD LAYOUT -->
+    <div class="admin-layout" id="adminDashboardLayout" style="display: none;">
+        
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div class="sidebar-brand">
+                    <h3>HADI HOTEL</h3>
+                    <span>Admin Control</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-category">Main Operations</div>
+                <a href="#dashboard" class="admin-nav-item active" data-view="dashboardView">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#orders" class="admin-nav-item" data-view="ordersView">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Live Orders</span>
+                    <span class="badge" id="pendingOrdersBadge">0</span>
+                </a>
+                <a href="#reservations" class="admin-nav-item" data-view="reservationsView">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Table Bookings</span>
+                    <span class="badge" id="pendingResBadge">0</span>
+                </a>
+
+                <div class="nav-category">Catalogue & Rooms</div>
+                <a href="#menu" class="admin-nav-item" data-view="menuView">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Menu Manager</span>
+                </a>
+                <a href="#reviews" class="admin-nav-item" data-view="reviewsView">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Guest Reviews</span>
+                </a>
+
+                <div class="nav-category">System</div>
+                <a href="#settings" class="admin-nav-item" data-view="settingsView">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Restaurant Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 0.5rem;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live Website
+                </a>
+                <button id="adminLogoutBtn" class="btn-outline" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 0.5rem; margin-top: 0.5rem; border-color: rgba(239, 68, 68, 0.4); color: #ef4444;">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="admin-main">
+            <!-- TOPBAR -->
+            <header class="admin-topbar">
+                <div class="topbar-left">
+                    <h2 class="page-title" id="pageTitleHeading">Dashboard Overview</h2>
+                </div>
+                <div class="topbar-right">
+                    <a href="index.html" target="_blank" class="quick-view-site-btn">
+                        <i class="fa-solid fa-globe"></i> View Website
+                    </a>
+                    <div class="admin-profile-pill">
+                        <div class="admin-avatar">H</div>
+                        <div class="admin-name">Admin Manager</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- DYNAMIC VIEW SECTIONS -->
+            <div class="admin-content">
+                
+                <!-- 1. DASHBOARD VIEW -->
+                <section class="view-section active" id="dashboardView">
+                    <!-- Metrics Cards -->
+                    <div class="metrics-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Total Revenue</span>
+                                <div class="stat-icon gold"><i class="fa-solid fa-coins"></i></div>
+                            </div>
+                            <div class="stat-value" id="metricTotalRevenue">Rs. 0</div>
+                            <div class="stat-footer">
+                                <span class="stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> +14.5%</span>
+                                <span>vs last week</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Active Orders</span>
+                                <div class="stat-icon emerald"><i class="fa-solid fa-cart-shopping"></i></div>
+                            </div>
+                            <div class="stat-value" id="metricTotalOrders">0</div>
+                            <div class="stat-footer">
+                                <span class="stat-trend up" id="metricPendingOrdersText">0 Pending</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Table Bookings</span>
+                                <div class="stat-icon blue"><i class="fa-solid fa-chair"></i></div>
+                            </div>
+                            <div class="stat-value" id="metricTotalReservations">0</div>
+                            <div class="stat-footer">
+                                <span id="metricPendingResText">0 Awaiting Confirmation</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Menu Dishes</span>
+                                <div class="stat-icon purple"><i class="fa-solid fa-plate-wheat"></i></div>
+                            </div>
+                            <div class="stat-value" id="metricTotalMenuItems">0</div>
+                            <div class="stat-footer">
+                                <span style="color: var(--adm-emerald);">All Live & Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Orders & Table Preview -->
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-solid fa-clock-rotate-left text-gold"></i> Recent Incoming Orders</h3>
+                            <button class="btn-outline" onclick="window.switchAdminTab('ordersView')" style="font-size: 0.8rem; padding: 0.35rem 0.8rem;">
+                                View All Orders
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="adm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Type & Address</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboardRecentOrdersTable">
+                                    <!-- Populated via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. ORDERS MANAGEMENT VIEW -->
+                <section class="view-section" id="ordersView">
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-solid fa-bag-shopping text-gold"></i> Food Orders Management</h3>
+                            <div class="panel-actions">
+                                <div class="search-box-adm">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="orderSearchInput" placeholder="Search order ID or name...">
+                                </div>
+                                <select id="orderStatusFilter" class="filter-select">
+                                    <option value="all">All Statuses</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Preparing">Preparing</option>
+                                    <option value="Out for Delivery">Out for Delivery</option>
+                                    <option value="Completed">Completed</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="adm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Phone</th>
+                                        <th>Service & Location</th>
+                                        <th>Items Summary</th>
+                                        <th>Total Bill</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersFullTable">
+                                    <!-- Populated via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. TABLE RESERVATIONS VIEW -->
+                <section class="view-section" id="reservationsView">
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-regular fa-calendar-check text-gold"></i> Table Reservations</h3>
+                            <div class="panel-actions">
+                                <div class="search-box-adm">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="resSearchInput" placeholder="Search guest name...">
+                                </div>
+                                <select id="resStatusFilter" class="filter-select">
+                                    <option value="all">All Bookings</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Confirmed">Confirmed</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="adm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Guest Name</th>
+                                        <th>Phone</th>
+                                        <th>Date & Time</th>
+                                        <th>Guests</th>
+                                        <th>Seating Area</th>
+                                        <th>Occasion / Request</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reservationsTable">
+                                    <!-- Populated via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. MENU MANAGER VIEW (CRUD) -->
+                <section class="view-section" id="menuView">
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-solid fa-utensils text-gold"></i> Restaurant Dishes & Menu Catalogue</h3>
+                            <div class="panel-actions">
+                                <div class="search-box-adm">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="adminMenuSearch" placeholder="Search dish...">
+                                </div>
+                                <select id="adminMenuCategoryFilter" class="filter-select">
+                                    <option value="all">All Categories</option>
+                                    <option value="biryani">Biryani & Rice</option>
+                                    <option value="bbq">Charcoal BBQ</option>
+                                    <option value="main-course">Royal Gravies</option>
+                                    <option value="starters">Starters & Appetizers</option>
+                                    <option value="continental">Continental</option>
+                                    <option value="desserts">Desserts</option>
+                                    <option value="beverages">Beverages</option>
+                                </select>
+                                <button class="btn-primary" id="openAddDishModalBtn" style="padding: 0.55rem 1.1rem; font-size: 0.85rem;">
+                                    <i class="fa-solid fa-plus"></i> Add New Dish
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="adm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Dish</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Type</th>
+                                        <th>Availability</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminMenuTable">
+                                    <!-- Populated via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. GUEST REVIEWS VIEW -->
+                <section class="view-section" id="reviewsView">
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-solid fa-star text-gold"></i> Guest Reviews Moderation</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="adm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Rating</th>
+                                        <th>Comment</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminReviewsTable">
+                                    <!-- Populated via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. RESTAURANT SETTINGS VIEW -->
+                <section class="view-section" id="settingsView">
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title"><i class="fa-solid fa-sliders text-gold"></i> Restaurant Information & Configuration</h3>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <form id="adminSettingsForm">
+                                <div class="adm-form-grid">
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setRestName">Restaurant Name</label>
+                                        <input type="text" id="setRestName" class="adm-input" required>
+                                    </div>
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setTagline">Tagline</label>
+                                        <input type="text" id="setTagline" class="adm-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="adm-form-grid">
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setPhone">Hotline Phone</label>
+                                        <input type="text" id="setPhone" class="adm-input" required>
+                                    </div>
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setEmail">Email Address</label>
+                                        <input type="email" id="setEmail" class="adm-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="adm-form-grid">
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setAddress">Street Address</label>
+                                        <input type="text" id="setAddress" class="adm-input" required>
+                                    </div>
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setCity">City & Country</label>
+                                        <input type="text" id="setCity" class="adm-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="adm-form-grid">
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setTaxRate">GST Tax Rate (%)</label>
+                                        <input type="number" id="setTaxRate" class="adm-input" min="0" max="30" step="0.5" required>
+                                    </div>
+                                    <div class="adm-form-group">
+                                        <label class="adm-label" for="setAdminPin">Admin Access PIN / Password</label>
+                                        <input type="text" id="setAdminPin" class="adm-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="adm-form-group">
+                                    <label class="adm-label" for="setAnnouncement">Top Banner Announcement Text</label>
+                                    <input type="text" id="setAnnouncement" class="adm-input">
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                                    <button type="submit" class="btn-primary">
+                                        <i class="fa-solid fa-floppy-disk"></i> Save Restaurant Settings
+                                    </button>
+                                    <button type="button" class="btn-outline" id="resetDemoDataBtn" style="border-color: rgba(239, 68, 68, 0.4); color: #ef4444;">
+                                        <i class="fa-solid fa-rotate-left"></i> Reset All Data to Demo Defaults
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD / EDIT DISH MODAL -->
+    <div class="modal-backdrop" id="dishModal">
+        <div class="modal-content-box" style="max-width: 650px;">
+            <div class="modal-header">
+                <h3 id="dishModalTitle" style="font-size: 1.25rem; color: #ffffff;"><i class="fa-solid fa-bowl-food text-gold"></i> Add New Dish</h3>
+                <button class="close-btn" id="closeDishModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="dishForm">
+                    <input type="hidden" id="dishId">
+
+                    <div class="adm-form-grid">
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishName">Dish Name *</label>
+                            <input type="text" id="dishName" class="adm-input" placeholder="e.g. Royal Chicken Handi" required>
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishCategory">Category *</label>
+                            <select id="dishCategory" class="adm-select" required>
+                                <option value="biryani">Biryani & Rice</option>
+                                <option value="bbq">Charcoal BBQ</option>
+                                <option value="main-course">Royal Gravies</option>
+                                <option value="starters">Starters & Appetizers</option>
+                                <option value="continental">Continental & Burgers</option>
+                                <option value="desserts">Shahi Desserts</option>
+                                <option value="beverages">Beverages & Mocktails</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="adm-form-grid">
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishPrice">Selling Price (Rs.) *</label>
+                            <input type="number" id="dishPrice" class="adm-input" placeholder="850" min="0" required>
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishOriginalPrice">Original Strikethrough Price (Rs.)</label>
+                            <input type="number" id="dishOriginalPrice" class="adm-input" placeholder="980">
+                        </div>
+                    </div>
+
+                    <div class="adm-form-grid">
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishBadge">Promotional Badge</label>
+                            <input type="text" id="dishBadge" class="adm-input" placeholder="e.g. Chef's Special / Bestseller">
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-label" for="dishIsVeg">Dietary Type</label>
+                            <select id="dishIsVeg" class="adm-select">
+                                <option value="false">Non-Vegetarian</option>
+                                <option value="true">Vegetarian</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="adm-form-group">
+                        <label class="adm-label" for="dishImage">Image URL</label>
+                        <input type="url" id="dishImage" class="adm-input" placeholder="https://images.unsplash.com/..." required>
+                        <small style="color: var(--adm-text-muted); font-size: 0.75rem; margin-top: 0.25rem;">
+                            Tip: You can use any high-res Unsplash food photo URL.
+                        </small>
+                    </div>
+
+                    <div class="adm-form-group">
+                        <label class="adm-label" for="dishDesc">Dish Description *</label>
+                        <textarea id="dishDesc" class="adm-textarea" rows="3" placeholder="Describe the ingredients, taste profile, and royal preparation..." required></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;">
+                        <button type="button" class="btn-outline" id="cancelDishBtn">Cancel</button>
+                        <button type="submit" class="btn-primary"><i class="fa-solid fa-check"></i> Save Dish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER DETAILS & PRINT INVOICE MODAL -->
+    <div class="modal-backdrop" id="orderDetailsModal">
+        <div class="modal-content-box" style="max-width: 680px;">
+            <div class="modal-header">
+                <h3 style="font-size: 1.25rem; color: #ffffff;"><i class="fa-solid fa-file-invoice text-gold"></i> Order Invoice & Details</h3>
+                <button class="close-btn" id="closeOrderDetailsModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="orderDetailsModalBody">
+                <!-- Dynamically populated via admin.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

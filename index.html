@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HADI Hotel & Restaurant | Royal Dining & Luxury Living</title>
+    <meta name="description" content="Welcome to HADI Hotel & Restaurant. Experience world-class culinary artistry, luxurious suites, and royal hospitality in a modern atmosphere.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <div class="container announcement-container">
+            <div class="announcement-left">
+                <span class="announcement-item"><i class="fa-solid fa-clock"></i> Open: 11:00 AM - 02:00 AM Daily</span>
+                <span class="announcement-item"><i class="fa-solid fa-phone"></i> +92 300 7654321</span>
+                <span class="announcement-item"><i class="fa-solid fa-tag text-gold"></i> Use code <strong>HADI10</strong> for 10% OFF</span>
+            </div>
+            <div class="announcement-right">
+                <a href="#reservations" class="announcement-item"><i class="fa-regular fa-calendar-check"></i> Book Table</a>
+                <a href="admin.html" class="admin-quick-link" title="Open Hotel & Restaurant Admin Panel">
+                    <i class="fa-solid fa-user-shield"></i> Admin Panel
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SITE HEADER & NAVIGATION -->
+    <header class="site-header" id="siteHeader">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-title">HADI</span>
+                    <span class="brand-subtitle">Hotel & Restaurant</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#menu" class="nav-link">Menu & Order</a>
+                <a href="#rooms" class="nav-link">Rooms & Suites</a>
+                <a href="#reservations" class="nav-link">Reserve Table</a>
+                <a href="#gallery" class="nav-link">Ambience</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <!-- Cart Button -->
+                <button class="action-btn" id="openCartBtn" title="View Order Cart" aria-label="View Shopping Cart">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count-badge" id="cartCountBadge">0</span>
+                </button>
+
+                <!-- Reservation CTA -->
+                <a href="#reservations" class="btn-primary">
+                    <i class="fa-solid fa-utensils"></i> Reserve Table
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-backdrop-shapes">
+                <div class="shape-circle-1"></div>
+                <div class="shape-circle-2"></div>
+            </div>
+            
+            <div class="container hero-grid">
+                <div class="hero-text-content">
+                    <div class="hero-tag">
+                        <i class="fa-solid fa-star"></i> Five-Star Luxury Dining & Living
+                    </div>
+                    <h1 class="hero-title">
+                        A Symphony of <br>
+                        <span class="text-gold font-display">Royal Flavors</span> & Luxury
+                    </h1>
+                    <p class="hero-subtitle">
+                        Step into HADI Hotel & Restaurant. Savor authentic culinary masterpieces crafted by master chefs, alongside bespoke 5-star hotel suites tailored for true royalty.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn-primary">
+                            <i class="fa-solid fa-fire-burner"></i> Explore Menu & Order
+                        </a>
+                        <a href="#reservations" class="btn-outline">
+                            <i class="fa-regular fa-calendar-plus"></i> Book Table
+                        </a>
+                        <a href="#rooms" class="btn-outline">
+                            <i class="fa-solid fa-hotel"></i> View Suites
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-box">
+                            <div class="stat-num">4.9 ★</div>
+                            <div class="stat-label">1,200+ Happy Diners</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">50+</div>
+                            <div class="stat-label">Royal Gourmet Dishes</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Halal & Farm Fresh</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="HADI Hotel & Restaurant Royal Cuisine" class="hero-main-img">
+                        <div class="hero-experience-badge">
+                            <span>15+</span>
+                            <small>Years of Excellence</small>
+                        </div>
+                    </div>
+                    <div class="hero-floating-badge">
+                        <div class="floating-icon">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="floating-text">
+                            <strong>Chef's Special Biryani & BBQ</strong>
+                            <span>Prepared fresh on charcoal flame</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERKS & HIGHLIGHTS STRIP -->
+        <section class="perks-strip">
+            <div class="container perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="perk-info">
+                        <h4>100% Halal Certified</h4>
+                        <p>Finest cuts and farm-fresh spices</p>
+                    </div>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <div class="perk-info">
+                        <h4>Master Chefs</h4>
+                        <p>Decades of royal Awadhi & Mughal heritage</p>
+                    </div>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                    <div class="perk-info">
+                        <h4>VIP Dining & Suites</h4>
+                        <p>Rooftop sky lounge & private dining halls</p>
+                    </div>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="perk-info">
+                        <h4>Express Service</h4>
+                        <p>Piping hot delivery & 24/7 room service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / STORY SECTION -->
+        <section class="section section-alt" id="about">
+            <div class="container">
+                <div class="reservation-grid">
+                    <div class="about-media">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="HADI Hotel Interior Ambience" style="border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+                    </div>
+                    <div class="about-text">
+                        <span class="section-badge">Our Heritage & Passion</span>
+                        <h2 class="section-title">Where Royal Flavors Meet <span class="text-gold">Five-Star Comfort</span></h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 1.05rem; line-height: 1.7;">
+                            Established with the vision of offering unparalleled culinary hospitality, <strong>HADI Hotel & Restaurant</strong> is a celebration of rich taste, timeless hospitality, and modern luxury.
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.7;">
+                            From our slow-cooked Royal Mutton Dum Biryani and sizzling charcoal grilled kebabs to our palatial executive hotel suites, every detail is meticulously curated to deliver an unforgettable experience.
+                        </p>
+                        <div class="reservation-perks-list">
+                            <div class="res-perk-item">
+                                <i class="fa-solid fa-leaf"></i>
+                                <div>
+                                    <strong>Finest Organic Spices & Cold-Pressed Oils</strong>
+                                    <p>We source authentic hand-pounded spices for rich aroma without artificial additives.</p>
+                                </div>
+                            </div>
+                            <div class="res-perk-item">
+                                <i class="fa-solid fa-bell-concierge"></i>
+                                <div>
+                                    <strong>Dedicated White-Glove Hospitality</strong>
+                                    <p>Trained service personnel ensuring personalized care for dining and hotel stays.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE INTERACTIVE MENU & FOOD ORDERING -->
+        <section class="section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Gourmet Selection</span>
+                    <h2 class="section-title">Explore Our <span class="text-gold">Signature Menu</span></h2>
+                    <p class="section-subtitle">Prepared with passion, precision, and royal recipes. Order online directly or reserve a table to dine in grandeur.</p>
+                </div>
+
+                <!-- Menu Controls: Search & Category Tabs -->
+                <div class="menu-controls">
+                    <div class="menu-search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass menu-search-icon"></i>
+                        <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search dishes (e.g. Biryani, Butter Chicken, BBQ, Kebab)...">
+                    </div>
+
+                    <div class="menu-categories-tabs" id="menuCategories">
+                        <button class="category-tab active" data-category="all">All Dishes</button>
+                        <button class="category-tab" data-category="biryani">Biryani & Rice</button>
+                        <button class="category-tab" data-category="bbq">Charcoal BBQ</button>
+                        <button class="category-tab" data-category="main-course">Royal Gravies</button>
+                        <button class="category-tab" data-category="starters">Starters & Appetizers</button>
+                        <button class="category-tab" data-category="continental">Gourmet Fast Food</button>
+                        <button class="category-tab" data-category="desserts">Shahi Desserts</button>
+                        <button class="category-tab" data-category="beverages">Beverages & Mocktails</button>
+                    </div>
+                </div>
+
+                <!-- Menu Grid Rendered by JavaScript -->
+                <div class="menu-grid" id="menuGridContainer">
+                    <!-- Populated dynamically via main.js from HadiStore -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLE RESERVATION SECTION -->
+        <section class="section section-alt" id="reservations">
+            <div class="container">
+                <div class="reservation-wrapper">
+                    <div class="reservation-grid">
+                        <div class="reservation-info">
+                            <span class="section-badge">Book In Advance</span>
+                            <h2 class="section-title">Reserve Your <span class="text-gold">Royal Table</span></h2>
+                            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+                                Whether it's an intimate candlelight dinner, a joyous family celebration, or an executive corporate meeting, we guarantee the perfect seating, breathtaking ambience, and attentive service.
+                            </p>
+
+                            <div class="reservation-perks-list">
+                                <div class="res-perk-item">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                    <div>
+                                        <strong>Instant Booking Confirmation</strong>
+                                        <p>Receive your booking ID instantly. Our table manager verifies every reservation in real-time.</p>
+                                    </div>
+                                </div>
+                                <div class="res-perk-item">
+                                    <i class="fa-solid fa-cake-candles"></i>
+                                    <div>
+                                        <strong>Celebration & Birthday Arrangements</strong>
+                                        <p>Complimentary custom music, table decor, and celebration cake upon request.</p>
+                                    </div>
+                                </div>
+                                <div class="res-perk-item">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                    <div>
+                                        <strong>VIP Reservation Hotline</strong>
+                                        <p>Call directly for urgent bookings: <strong>+92 300 7654321</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reservation Form -->
+                        <div class="reservation-form-card">
+                            <form id="reservationForm">
+                                <div class="form-group-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="resName">Full Name *</label>
+                                        <input type="text" id="resName" class="form-control" placeholder="e.g. Zameer Khan" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="resPhone">Phone Number *</label>
+                                        <input type="tel" id="resPhone" class="form-control" placeholder="+92 300 1234567" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="resDate">Reservation Date *</label>
+                                        <input type="date" id="resDate" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="resTime">Preferred Time *</label>
+                                        <select id="resTime" class="form-control" required>
+                                            <option value="">Select Time Slot</option>
+                                            <option value="12:30 PM">12:30 PM (Lunch)</option>
+                                            <option value="01:30 PM">01:30 PM (Lunch)</option>
+                                            <option value="03:00 PM">03:00 PM (Afternoon)</option>
+                                            <option value="07:00 PM">07:00 PM (Dinner)</option>
+                                            <option value="08:00 PM">08:00 PM (Dinner)</option>
+                                            <option value="09:00 PM">09:00 PM (Dinner)</option>
+                                            <option value="10:30 PM">10:30 PM (Late Night)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="resGuests">Number of Guests *</label>
+                                        <select id="resGuests" class="form-control" required>
+                                            <option value="2">2 Persons (Couple)</option>
+                                            <option value="4">4 Persons</option>
+                                            <option value="6">6 Persons</option>
+                                            <option value="8">8 Persons (Large Family)</option>
+                                            <option value="12">12+ Persons (Grand Party)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="resArea">Seating Area *</label>
+                                        <select id="resArea" class="form-control" required>
+                                            <option value="Royal Dining Hall">Royal Dining Hall (Indoor)</option>
+                                            <option value="Rooftop VIP Sky Lounge">Rooftop VIP Sky Lounge</option>
+                                            <option value="Private VIP Booth">Private VIP Booth</option>
+                                            <option value="Garden Terrace">Garden Terrace</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="resOccasion">Occasion / Special Requests</label>
+                                    <input type="text" id="resOccasion" class="form-control" placeholder="Birthday, Anniversary, Candlelight, Extra High Chairs...">
+                                </div>
+
+                                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1rem; margin-top: 0.5rem;">
+                                    <i class="fa-solid fa-check-circle"></i> Confirm Table Reservation
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUXURY HOTEL ROOMS & SUITES SECTION -->
+        <section class="section" id="rooms">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Five-Star Hospitality</span>
+                    <h2 class="section-title">Palatial Hotel <span class="text-gold">Rooms & Suites</span></h2>
+                    <p class="section-subtitle">Retreat to supreme comfort with majestic interiors, 24/7 in-room gourmet dining, and personalized concierge care.</p>
+                </div>
+
+                <div class="rooms-grid" id="roomsGridContainer">
+                    <!-- Populated dynamically via main.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- AMBIENCE & CULINARY GALLERY -->
+        <section class="section section-alt" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">The Experience</span>
+                    <h2 class="section-title">Glimpse Our <span class="text-gold">Royal Ambience</span></h2>
+                    <p class="section-subtitle">Take a visual tour through our architectural elegance, culinary craftsmanship, and serene rooftop.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item span-2">
+                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=80" alt="Royal Dining Hall" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Interior Architecture</span>
+                            <div class="gallery-title">Grand Royal Banquet & Dining Hall</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Gourmet Barbecue" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Culinary Art</span>
+                            <div class="gallery-title">Charcoal Sizzling Feast</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Evening Rooftop" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Night View</span>
+                            <div class="gallery-title">Rooftop Sky Terrace</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Presidential Suite" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Luxury Suite</span>
+                            <div class="gallery-title">Italian Marble & Jacuzzi Suite</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=600&q=80" alt="Master Chef Preparing Dish" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Chef's Table</span>
+                            <div class="gallery-title">Master Chef in Action</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item span-2">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=80" alt="Special Beverages" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Mixology</span>
+                            <div class="gallery-title">Crafted Artisanal Mocktails & Shakes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS & TESTIMONIALS -->
+        <section class="section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Guest Impressions</span>
+                    <h2 class="section-title">Words From <span class="text-gold">Our Diners</span></h2>
+                    <p class="section-subtitle">Real experiences from guests who made memories at HADI Hotel & Restaurant.</p>
+                </div>
+
+                <div class="reviews-grid" id="reviewsContainer">
+                    <!-- Populated dynamically via main.js -->
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn-outline" id="openReviewModalBtn">
+                        <i class="fa-solid fa-pen-fancy"></i> Share Your Experience / Review
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & LOCATION SECTION -->
+        <section class="section section-alt" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Visit HADI <span class="text-gold">Hotel & Restaurant</span></h2>
+                    <p class="section-subtitle">Conveniently located in the heart of the city with valet parking and 24-hour service.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card-box">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #ffffff;">Contact Information</h3>
+                        
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Our Address</h4>
+                                <p id="contactAddress">Grand Boulevard, Royal Avenue, Luxury Enclave, Lahore, Pakistan</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Phone & Hotline</h4>
+                                <p><a href="tel:+923007654321" id="contactPhone">+92 300 7654321</a></p>
+                                <p><a href="tel:+924235789000">+92 42 35789000</a> (Hotel Reception)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Inquiries</h4>
+                                <p><a href="mailto:info@hadihotel.com" id="contactEmail">info@hadihotel.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-box"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <h4>Dining & Stay Hours</h4>
+                                <p><strong>Restaurant Dining:</strong> 11:00 AM - 02:00 AM</p>
+                                <p><strong>Hotel Check-in & Reception:</strong> 24 Hours Open</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <a href="https://wa.me/923007654321?text=Hello%20HADI%20Hotel,%20I%20would%20like%20to%20inquire" target="_blank" class="btn-primary" style="background: #25d366; color: #ffffff; border: none;">
+                                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108843.83407986064!2d74.2435552952528!3d31.51468600465561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+                        <div class="logo-text">
+                            <span class="brand-title">HADI</span>
+                            <span class="brand-subtitle">Hotel & Restaurant</span>
+                        </div>
+                    </div>
+                    <p>
+                        A premier destination for world-class dining and luxury stays. Preserving royal recipes with modern hospitality for an experience beyond compare.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-pill" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-pill" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-pill" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#menu">Menu & Order</a></li>
+                        <li><a href="#rooms">Rooms & Suites</a></li>
+                        <li><a href="#reservations">Table Booking</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Cuisine Highlights</h4>
+                    <ul class="footer-links">
+                        <li><a href="#menu">Royal Mutton Biryani</a></li>
+                        <li><a href="#menu">Charcoal BBQ Platter</a></li>
+                        <li><a href="#menu">Butter Chicken Makhani</a></li>
+                        <li><a href="#menu">Shahi Zafrani Kheer</a></li>
+                        <li><a href="#menu">Artisan Naan Breads</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Management</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+                        Restaurant staff and administrators can manage live menu, incoming food orders, and table bookings directly.
+                    </p>
+                    <a href="admin.html" class="btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Access Admin Dashboard
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> HADI Hotel & Restaurant. All Rights Reserved.</p>
+                <p>Designed with Luxury & Modern Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SLIDE-IN CART DRAWER -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping text-gold"></i> Your Order Cart</h3>
+            <button class="close-btn" id="closeCartBtn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-items-list" id="cartItemsList">
+            <!-- Rendered by main.js -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">Rs. 0</span>
+            </div>
+            <div class="cart-summary-line">
+                <span>GST Tax (5%):</span>
+                <span id="cartTax">Rs. 0</span>
+            </div>
+            <div class="cart-summary-line" id="discountLine" style="display: none; color: #10b981;">
+                <span>Discount (10% Promo):</span>
+                <span id="cartDiscount">-Rs. 0</span>
+            </div>
+            <div class="cart-summary-line total">
+                <span>Estimated Total:</span>
+                <span class="total-amount" id="cartTotal">Rs. 0</span>
+            </div>
+            <button class="btn-primary" id="checkoutBtn" style="width: 100%; justify-content: center; margin-top: 1.2rem;">
+                <i class="fa-solid fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h3 style="font-size: 1.3rem; color: #ffffff;"><i class="fa-solid fa-cash-register text-gold"></i> Complete Your Order</h3>
+                <button class="close-btn" id="closeCheckoutModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label class="form-label" for="custName">Your Full Name *</label>
+                        <input type="text" id="custName" class="form-control" placeholder="e.g. Zameer Khan" required>
+                    </div>
+
+                    <div class="form-group-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="custPhone">Phone Number *</label>
+                            <input type="tel" id="custPhone" class="form-control" placeholder="+92 300 1234567" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="orderType">Order Service Type *</label>
+                            <select id="orderType" class="form-control" required>
+                                <option value="Dine-in">Dine-in (At Restaurant)</option>
+                                <option value="Home Delivery">Home Delivery</option>
+                                <option value="Takeaway">Takeaway (Counter Pickup)</option>
+                                <option value="Room Service">Hotel Room Service</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="custAddress">Delivery Address / Table No. / Room No. *</label>
+                        <input type="text" id="custAddress" class="form-control" placeholder="e.g. Table #5 / Room 204 / Street 4, Gulberg" required>
+                    </div>
+
+                    <div class="form-group-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="paymentMethod">Payment Method *</label>
+                            <select id="paymentMethod" class="form-control" required>
+                                <option value="Cash on Delivery">Cash on Delivery / Table Pay</option>
+                                <option value="Credit Card">Credit / Debit Card at Counter</option>
+                                <option value="Online Payment">Online Transfer (JazzCash / EasyPaisa / Bank)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="promoCode">Promo Coupon Code</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="text" id="promoCode" class="form-control" placeholder="Enter HADI10" style="text-transform: uppercase;">
+                                <button type="button" class="btn-outline" id="applyPromoBtn" style="padding: 0 1rem; flex-shrink: 0;">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="orderNotes">Cooking or Delivery Instructions</label>
+                        <textarea id="orderNotes" class="form-control" rows="2" placeholder="e.g. Less spicy, extra sauce, ring bell twice..."></textarea>
+                    </div>
+
+                    <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--border-glass);">
+                        <div style="display: flex; justify-content: space-between; font-weight: 700; color: #ffffff;">
+                            <span>Final Amount to Pay:</span>
+                            <span class="text-gold" id="checkoutFinalAmount" style="font-size: 1.3rem;">Rs. 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">
+                        <i class="fa-solid fa-circle-check"></i> Place Order Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER SUCCESS CONFIRMATION MODAL -->
+    <div class="modal-backdrop" id="orderSuccessModal">
+        <div class="modal-content-box" style="text-align: center; max-width: 500px;">
+            <div class="modal-body" style="padding: 3rem 2rem;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); border: 2px solid #10b981; color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.5rem;">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 style="font-size: 1.6rem; color: #ffffff; margin-bottom: 0.5rem;">Order Placed Successfully!</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Thank you! Your order has been dispatched directly to the HADI Hotel kitchen.
+                </p>
+                <div style="background: var(--bg-surface-elevated); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass); margin-bottom: 2rem;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase;">Tracking Order Number</span>
+                    <h2 class="text-gold" id="successOrderId" style="font-size: 1.8rem; margin-top: 0.2rem;">#ORD-9999</h2>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button class="btn-primary" id="successDoneBtn">Done & Continue</button>
+                    <a href="admin.html" class="btn-outline">Track in Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WRITE REVIEW MODAL -->
+    <div class="modal-backdrop" id="reviewModal">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h3 style="font-size: 1.3rem; color: #ffffff;"><i class="fa-solid fa-star text-gold"></i> Share Your Review</h3>
+                <button class="close-btn" id="closeReviewModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label class="form-label" for="revAuthor">Your Name *</label>
+                        <input type="text" id="revAuthor" class="form-control" placeholder="e.g. Hamza Malik" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="revRating">Rating *</label>
+                        <select id="revRating" class="form-control" required>
+                            <option value="5">★★★★★ (5 Stars - Exceptional)</option>
+                            <option value="4">★★★★☆ (4 Stars - Very Good)</option>
+                            <option value="3">★★★☆☆ (3 Stars - Average)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="revRole">Experience Type</label>
+                        <input type="text" id="revRole" class="form-control" placeholder="e.g. Dinner Guest / Hotel Stay / Takeaway">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="revComment">Your Experience / Feedback *</label>
+                        <textarea id="revComment" class="form-control" rows="3" placeholder="Tell us about the food taste, service quality, and ambience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/923007654321?text=Hello%20HADI%20Hotel%20%26%20Restaurant,%20I%20want%20to%20reserve%20a%20table%20or%20order" target="_blank" class="floating-whatsapp" aria-label="Chat with HADI Hotel on WhatsApp" title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
